@@ -17,17 +17,7 @@
               <#import "template/macro/hot_category.ftl" as hp>
               <@hp.hot_category />
             </#if>
-            <#import "template/macro/article.ftl" as h_article>
-            <@h_article.article posts=posts />
           </div>
-          <#if settings.enable_index_list_ajax==false>
-            <#include "template/common/pager.ftl">
-            <@pager method="index" postsData=posts display="${settings.max_pager_number!5}" />
-            <#--  <#include "template/macro/empty.ftl">
-            <@empty type="index" text="${settings.home_empty_text!'暂无文章数据'}" isAsync="true"/>  -->
-          <#else>
-            <div class="joe_load" loading="true">加载中...</div>
-          </#if>
         </div>
         <#include "template/common/aside.ftl">
       </div>
